@@ -55,13 +55,13 @@ namespace Donation
                 listVM = SimpleJson.DeserializeObject<PaymentViewModel>(result);
             };
 
-            if (listVM.orderStatus == 2)
+            if (listVM.orderStatus == 2 || listVM.orderStatus == 8)
             {
                 return RedirectToPage("./List");
             }
             else
             {
-                return Redirect("./Error");
+                return Redirect("/Error");
             }
         }
     }

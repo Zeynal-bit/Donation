@@ -39,7 +39,7 @@ namespace Donation
             var list = new PaymentList
             {
                 UserName = "client10",
-                Password = "1803",
+                Password = Convert.ToString(PasswordConvertor.Convert()),
                 OrderNumber = Convert.ToString(Guid.NewGuid()),
                 ReturnUrl = "https://localhost:44349/Payments/Register",
                 Amount = PaymentList.Amount,

@@ -33,6 +33,8 @@ namespace Donation
 
             var lists = _context.PaymentLists.ToList();
 
+            int successfulPayment = 2;
+            int successfulPaymentWithADelay = 8;
 
             foreach (var list1 in lists)
             {
@@ -55,7 +57,7 @@ namespace Donation
                 listVM = SimpleJson.DeserializeObject<PaymentViewModel>(result);
             };
 
-            if (listVM.orderStatus == 2 || listVM.orderStatus == 8)
+            if (listVM.orderStatus == successfulPayment || listVM.orderStatus == successfulPaymentWithADelay)
             {
                 return RedirectToPage("./List");
             }

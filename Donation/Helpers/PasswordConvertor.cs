@@ -8,14 +8,6 @@ namespace Donation.Helpers
 {
 	public class PasswordConvertor
 	{
-		//public void Convert()
-		//{
-		//    string a = "client10-spasem-mir";
-
-		//    a = "1803";
-		//}
-
-
 		static long ASCIIWordSum(String str, long[] sumArr)
 		{
 			int l = str.Length;
@@ -39,7 +31,7 @@ namespace Donation.Helpers
 			return bigSum;
 		}
 
-		public static void Convert()
+		public static long Convert()
 		{
 			String str = "client10-spasem-mir";
 
@@ -51,7 +43,8 @@ namespace Donation.Helpers
 			long[] sumArr = new long[ctr + 1];
 
 			long sum = ASCIIWordSum(str, sumArr);
-
+			
+			return sum;
 			
 		}
 	}

@@ -31,21 +31,21 @@ namespace Donation
         {
             var client = new HttpClient();
 
-            var lists = _context.PaymentLists.ToList();
+            var payments = _context.PaymentLists.ToList();
 
             int successfulPayment = 2;
             int successfulPaymentWithADelay = 8;
 
-            foreach (var list1 in lists)
+            foreach (var payment in payments)
             {
-                var list = new PaymentList
+                var paymentList = new PaymentList
                 {
-                    UserName = list1.UserName,
-                    Password = list1.Password,
-                    orderId = list1.orderId
+                    UserName = payment.UserName,
+                    Password = payment.Password,
+                    orderId = payment.orderId
                 };
 
-                var json = JsonConvert.SerializeObject(list);
+                var json = JsonConvert.SerializeObject(paymentList);
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var url = "http://attest.turkmen-tranzit.com/payment/rest/getOrderStatus.do";
